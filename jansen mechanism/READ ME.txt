@@ -1,0 +1,30 @@
+To execute the code:
+    *copy*  *paste*  this command in the *command window* and press *enter*.
+
+-----------------------------------------------------------------------------------------------------
+
+ti=0.5;t1_0=2.5;t2_0=1.3;t3_0=4;t4_0=2.5;t5_0=5;t6_0=4;t7_0=5;t8_0=2.5;
+[t1, t2, t3, t4, t5, t6, t7, t8] = jansen_S_N_R(ti, t1_0, t2_0, t3_0, t4_0, t5_0, t6_0, t7_0, t8_0);
+angles = [ti t1 t2 t3 t4 t5 t6 t7 t8];
+[positions] = find_joint_position(angles);
+ti = 0.1;
+t_estimates = [t1_0,t2_0,t3_0,t4_0,t5_0,t6_0,t7_0,t8_0];
+input_angle_step_size = 0.1;
+cycles = 2;
+[positions, trace] = Plot_jansen(ti, t_estimates, input_angle_step_size, cycles);
+
+-----------------------------------------------------------------------------------------------------
+
+NOTE:
+    -> this code executes our function we defined and also accepts the inputs for the functions.
+    -> final result will be a plot showing the operation of the jansen mechanism.
+    -> the movement of the end leg is traced a line (curved) in the plot.
+
+EXPLANATION:
+Line1: the inputs for the lengths of the bars in the jansen mechanism is given.
+Line2: the first function is called, refer to the function file to understand the inputs and output.
+Line3: the outputs of the first function executed is taken as inputs for the next function in the form of an array.
+Line4: the find_joint_position function is executed, taking "Line4" as inputs.
+Line(5-8): inputs required for the final function (ti, t_estimates, input_angle_step_size, cycles)
+Line9: executing the Plot_jansen function to obtain the plot.
+
